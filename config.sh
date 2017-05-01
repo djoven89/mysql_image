@@ -9,9 +9,9 @@ CONEX1=`mysqladmin -s --wait=20 -u root -h localhost ping | wc -l`
 CONEX1=`mysqladmin -s --wait=20 -u root -p${MYSQL_ROOT_PASSWORD} -h localhost ping | wc -l`
 
 if [ $CONEX -eq 0 ] && [ $CONEX1 -eq 0 ]
-	then
-		echo 'No se ha podido establecer conexión con la base de datos.'
-		exit 1
+   then
+      echo 'No se ha podido establecer conexión con la base de datos.'
+      exit 1
 fi
 
 DBCHECK=`mysql -u root -p${MYSQL_ROOT_PASSWORD} -e 'show databases;' | wc -l`
