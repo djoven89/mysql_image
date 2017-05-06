@@ -1,6 +1,8 @@
 FROM ubuntu:trusty
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV \
+  DEBIAN_FRONTEND noninteractive \
+  TZ=Europe/Madrid
 
 RUN \
   apt-get update && \
